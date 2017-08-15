@@ -51,6 +51,14 @@ namespace BZsWebBrowser2._0
         {
             button1.Enabled = true;
             textBox1.Enabled = true;
+            toolStripStatusLabel1.Text = "Navigation complete";
+
+
+            // fun fun fun  change set image attributes to cat image
+            foreach ( HtmlElement image in webBrowser1.Document.Images )
+            {
+                image.SetAttribute("src", "http://thumbpress.com/wp-content/uploads/2013/04/Funny-Cat-Pictures-with-Captions-23.jpg");
+            }
         }
 
         /// <summary>
@@ -58,6 +66,7 @@ namespace BZsWebBrowser2._0
         /// </summary>
         private void NavigateToPage()
         {
+            toolStripStatusLabel1.Text = "Navigation has started";
             button1.Enabled = false;
             textBox1.Enabled = false;
             webBrowser1.Navigate(textBox1.Text);
@@ -85,6 +94,11 @@ namespace BZsWebBrowser2._0
             {
                 toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
             }
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
