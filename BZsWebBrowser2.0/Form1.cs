@@ -50,7 +50,7 @@ namespace BZsWebBrowser2._0
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             button1.Enabled = true;
-            TextBox1.Enabled = true;
+            textBox1.Enabled = true;
         }
 
         /// <summary>
@@ -76,6 +76,14 @@ namespace BZsWebBrowser2._0
             {
                 NavigateToPage();
 
+            }
+        }
+
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            if( e.CurrentProgress > 0 & e.MaximumProgress >0 )
+            {
+                toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
             }
         }
     }
