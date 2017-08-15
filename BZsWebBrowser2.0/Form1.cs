@@ -49,7 +49,8 @@ namespace BZsWebBrowser2._0
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-
+            button1.Enabled = true;
+            TextBox1.Enabled = true;
         }
 
         /// <summary>
@@ -57,6 +58,8 @@ namespace BZsWebBrowser2._0
         /// </summary>
         private void NavigateToPage()
         {
+            button1.Enabled = false;
+            textBox1.Enabled = false;
             webBrowser1.Navigate(textBox1.Text);
 
         }
