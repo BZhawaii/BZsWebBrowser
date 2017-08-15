@@ -31,5 +31,20 @@ namespace BZsWebBrowser2._0
         {
             MessageBox.Show("This program was made by: BZ");
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// On click of this buttone the web control will display the pag requested.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(textBox1.Text);
+        }
     }
 }
