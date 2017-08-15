@@ -44,7 +44,36 @@ namespace BZsWebBrowser2._0
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            NavigateToPage();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// This is the core function that will perform navigation
+        /// </summary>
+        private void NavigateToPage()
+        {
             webBrowser1.Navigate(textBox1.Text);
+
+        }
+
+        /// <summary>
+        /// This function will fire every time  a key is pushed and released
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // if the keystroke was enter then do something
+            if( e.KeyChar == (char)ConsoleKey.Enter)
+            {
+                NavigateToPage();
+
+            }
         }
     }
 }
